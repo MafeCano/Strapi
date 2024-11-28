@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehiculos",
+  "info": {
+    "singularName": "vehiculo",
+    "pluralName": "vehiculos",
+    "displayName": "Vehiculo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdVehiculo": {
+      "type": "uid"
+    },
+    "PlaVehiculo": {
+      "type": "string",
+      "required": true
+    },
+    "marca": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::marca.marca",
+      "inversedBy": "vehiculos"
+    },
+    "estado": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::estado.estado",
+      "inversedBy": "vehiculos"
+    },
+    "tipo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tipo.tipo",
+      "inversedBy": "vehiculos"
+    },
+    "alquilers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::alquiler.alquiler",
+      "mappedBy": "vehiculo"
+    }
+  }
+}

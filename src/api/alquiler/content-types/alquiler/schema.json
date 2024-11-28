@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alquilers",
+  "info": {
+    "singularName": "alquiler",
+    "pluralName": "alquilers",
+    "displayName": "Alquiler",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idAlquiler": {
+      "type": "uid"
+    },
+    "fechaInicio": {
+      "type": "date"
+    },
+    "fechafin": {
+      "type": "date"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "vehiculo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vehiculo.vehiculo",
+      "inversedBy": "alquilers"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "alquilers"
+    },
+    "empleado": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empleado.empleado",
+      "inversedBy": "alquilers"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pagos",
+  "info": {
+    "singularName": "pago",
+    "pluralName": "pagos",
+    "displayName": "Pago",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idPagos": {
+      "type": "uid"
+    },
+    "fechaPago": {
+      "type": "date"
+    },
+    "montoPago": {
+      "type": "decimal"
+    },
+    "metodos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::metodo.metodo",
+      "mappedBy": "pago"
+    }
+  }
+}

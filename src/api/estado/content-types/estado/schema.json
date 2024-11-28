@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estados",
+  "info": {
+    "singularName": "estado",
+    "pluralName": "estados",
+    "displayName": "Estado",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "idEstado": {
+      "type": "uid"
+    },
+    "vehiculos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vehiculo.vehiculo",
+      "mappedBy": "estado"
+    },
+    "Estado": {
+      "type": "string"
+    }
+  }
+}
